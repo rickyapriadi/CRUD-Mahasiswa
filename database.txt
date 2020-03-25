@@ -1,0 +1,7 @@
+teknikinformatika_202033_11,ricky apriadi,20203311,teknik informatika
+teknikinformatika_202033_12,ricky harun,20203312,teknik informatika
+teknikinformatika_202033_13,ricky perdana,20203313,teknik informatika
+teknikkomputer_202033_11,munah maemunah,20203411,teknik komputer
+teknikkomputer_202033_12,bambang tamvan,20203412,teknik komputer
+sisteminformasi_202033_11,konah markonah,20203511,sistem informasi
+teknikinformatika_202033_14,rara,20203314,teknik informatika
