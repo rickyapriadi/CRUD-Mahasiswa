@@ -9,7 +9,6 @@ import crud.Header;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
         Scanner terminalInput = new Scanner(System.in);
         String userOption;
         boolean isContinue = true;

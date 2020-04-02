@@ -8,15 +8,12 @@ import java.util.regex.*;
 public class Utility {
 
     static boolean checkData(String[] keywords, boolean isDisplay) throws IOException {
-
-        // buka file
         BufferedReader bufferedReader = new BufferedReader(
                 new FileReader("database.txt"));
 
         int number = 0;
         boolean isExist = false;
 
-        // baca database perbaris
         String data = bufferedReader.readLine();
 
         if (isDisplay) {
@@ -47,7 +44,7 @@ public class Utility {
                     break;
                 }
             }
-            //refresh data perbaris
+            // refresh data perbaris
             data = bufferedReader.readLine();
         }
 
@@ -191,7 +188,7 @@ public class Utility {
         FileReader fileReader = new FileReader("database.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        // entry diawali dari 10, bukan 0
+        // entry diawali dari 10
         long entry = 10;
         String data = bufferedReader.readLine();
 
@@ -211,7 +208,7 @@ public class Utility {
 
                                         // jurusan                                      // nim temporary
             if (majors.equalsIgnoreCase(dataScanner.next()) && nimTemp.equalsIgnoreCase(dataScanner.next())) {
-                // baca entry terakhir, kemudian akan ditambah 1 dipemangilan method
+                // baca entry terakhir, kemudian akan ditambah 1 dipemangilan fungsi
                 entry = dataScanner.nextInt() ;
             }
 
@@ -225,13 +222,12 @@ public class Utility {
     }
 
     public static boolean getYesOrNo(String message) {
-
         Scanner terminalInput = new Scanner(System.in);
         System.out.print(message + "(y/n) : ");
         String userOption = terminalInput.next();
 
         while ( !userOption.equalsIgnoreCase("y") &&
-                !userOption.equalsIgnoreCase("n")) {
+                !userOption.equalsIgnoreCase("n") ){
             System.out.println("\nPilihan anda bukan y/n");
             System.out.print(message + "(y/n) : ");
             userOption = terminalInput.next();
@@ -243,7 +239,7 @@ public class Utility {
         /**
          *  method ini tidak bekerja di intellij idea
          *  tapi bekerja dengan baik di Visual Studio code
-         *  atau melalui terminal dengan mengeksekusi file .class : java cam.ricky.Main
+         *  atau melalui terminal dengan mengeksekusi file .class : java com.ricky.Main
          */
 
         try {
