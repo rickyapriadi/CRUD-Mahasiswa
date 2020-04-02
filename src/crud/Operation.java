@@ -254,7 +254,7 @@ public class Operation {
 
                 System.out.println("\nJika anda ingin mengubah NIM,\nsilahkan ubah tahun dan jurusan.");
 
-                boolean updateYear = false, updateMajors = false;
+                boolean updateName = false, updateYear = false, updateMajors = false;
 
                 st = new StringTokenizer(data,",");
                 String originalData;
@@ -266,6 +266,7 @@ public class Operation {
 
                     if (isUpdate) {
                         if (fieldData[i].equalsIgnoreCase("Nama")) {
+                            updateName = true;
                             System.out.print("\nMasukan Nama baru : ");
                             tempData[i] = Utility.getName();
                         } else if (fieldData[i].equalsIgnoreCase("Tahun")) {
@@ -286,19 +287,18 @@ public class Operation {
                 long majorsCode, entry = 0;
 
                 // buat nim baru
-                if (updateYear) {
+                if (updateName) {
+                    nim = tempData[1];
+                } else if (updateYear) {
                     majorsCode = Utility.getMajorsCode(tempData[2]);
                     nimTemp = tempData[1] + majorsCode;
                     entry = Utility.getEntry(tempData[2], nimTemp) + 1;
-                    nim = tempData[1] + majorsCode + entry;
+                    nim = nimTemp + entry;
                 } else if (updateMajors) {
                     majorsCode = Utility.getMajorsCode(tempData[2]);
-                    nimTemp = tempData[1] + majorsCode;
+                    nimTemp = tempData[1].substring(0,4) + majorsCode;
                     entry = Utility.getEntry(tempData[2], nimTemp) + 1;
-                    nim = tempData[1] + majorsCode + entry;
-
-                    StringBuilder sb = new StringBuilder(nim);
-                    nim = sb.delete(4,8).toString();
+                    nim = nimTemp + entry;
                 }
 
                 // buat primary key baru
