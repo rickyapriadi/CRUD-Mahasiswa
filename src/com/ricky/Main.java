@@ -3,9 +3,8 @@ package com.ricky;
 import java.io.*;
 import java.util.Scanner;
 
-import crud.Operation;
-import crud.Utility;
-import crud.Header;
+import com.operation.*;
+import com.utility.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -14,7 +13,7 @@ public class Main {
         boolean isContinue = true;
 
         while (isContinue) {
-            Utility.clearScreen();
+            Util.clearScreen();
             System.out.println("\n\n1. Lihat Data Mahasiswa");
             System.out.println("2. Cari Data Mahasiswa");
             System.out.println("3. Tambah Data Mahasiswa");
@@ -27,29 +26,29 @@ public class Main {
 
             switch (userOption) {
                 case "1":
-                    Utility.clearScreen();
+                    Util.clearScreen();
                     Header.read();
-                    Operation.readData();
+                    ReadData.read();
                     break;
                 case "2":
-                    Utility.clearScreen();
+                    Util.clearScreen();
                     Header.search();
-                    Operation.searchData();
+                    SearchData.search();
                     break;
                 case "3":
-                    Utility.clearScreen();
+                    Util.clearScreen();
                     Header.create();
-                    Operation.createData();
+                    CreateData.create();
                     break;
                 case "4":
-                    Utility.clearScreen();
+                    Util.clearScreen();
                     Header.update();
-                    Operation.updateData();
+                    UpdateData.update();
                     break;
                 case "5":
-                    Utility.clearScreen();
+                    Util.clearScreen();
                     Header.delete();
-                    Operation.deleteData();
+                    DeleteData.delete();
                     break;
                 case "6":
                     isContinue = false;
@@ -58,7 +57,7 @@ public class Main {
                     System.out.print("\nPilihan anda tidak ditemukan.");
                     System.out.print("\nSilahkan pilih 1-6.\n");
 
-                    isContinue = Utility.getYesOrNo("\nApakah anda ingin melanjukan ? ");
+                    isContinue = Util.getYesOrNo("\nApakah anda ingin melanjukan ? ");
             }
         }
     }

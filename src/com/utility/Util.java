@@ -1,13 +1,12 @@
-package crud;
+package com.utility;
 
 import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.regex.*;
 
-public class Utility {
-
-    static boolean checkData(String[] keywords, boolean isDisplay) throws IOException {
+public class Util {
+    public static boolean checkData(String[] keywords, boolean isDisplay) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(
                 new FileReader("database.txt"));
 
@@ -57,7 +56,7 @@ public class Utility {
         return isExist;
     }
 
-    protected static String getName() {
+    public static String getName() {
         /**
          * nama hanya berupa huruf a-z besar ataupun kecil, minimal 3 huruf,
          * dapat mengandung spasi dan tanda hubung (-)
@@ -88,7 +87,7 @@ public class Utility {
         return nameGroup;
     }
 
-    protected static String getYear() {
+    public static String getYear() {
         /**
          * tahun diawali dengan 20,
          * diikuti dengan dua angka berapapun dibelakangnya
@@ -120,7 +119,7 @@ public class Utility {
         return yearGroup;
     }
 
-    protected static String getMajors() {
+    public static String getMajors() {
         /**
          * aplikasi ini hanya/baru memiliki 3 jurusan
          */
@@ -135,7 +134,7 @@ public class Utility {
             System.out.println("2. teknik komputer");
             System.out.println("3. sistem informasi");
 
-            System.out.print("\nPilih jurusan [1-3]: ");
+            System.out.print("\nPilih jurusan [1-3] : ");
             userOption = terminalInput.next();
 
             switch (userOption) {
@@ -163,7 +162,7 @@ public class Utility {
         return majors;
     }
 
-    protected static long getMajorsCode(String majors) {
+    public static long getMajorsCode(String majors) {
         /**
          * kode jurusan didapat dari pemilihan jurusan
          */
@@ -179,7 +178,7 @@ public class Utility {
         return code;
     }
 
-    protected static long getEntry(String majors, String nimTemp) throws IOException{
+    public static long getEntry(String majors, String nimTemp) throws IOException{
         /**
          * penentuan entry melalui pengecekan pada suatu jurusan
          * jika dalam jurusan tersebut entry mahasiswa terakhir 15,

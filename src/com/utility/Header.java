@@ -1,4 +1,4 @@
-package crud;
+package com.utility;
 
 public class Header {
 
@@ -47,5 +47,12 @@ public class Header {
     public static void line() {
         System.out.println(
                 "=================================================================");
+    }
+
+    public static void updateNote() {
+        System.out.println(
+                        "\n=================================================================" +
+                        "\n| Jika anda ingin mengubah NIM, silahkan ubah tahun dan jurusan |" +
+                        "\n=================================================================");
     }
 }
